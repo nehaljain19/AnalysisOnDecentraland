@@ -16,8 +16,8 @@ from PIL import Image
 
 @st.cache
 def load_data():
-    datacsv = pd.read_csv("C:/Users/Nehal/OneDrive/Documents/Nehal_Personal/Blockchain_Project/Data_Metaverse/DecentralandTheGraphOpenSea.csv")#To load it from local
-    #datacsv = pd.read_csv("DecentralandTheGraphOpenSea.csv") #To load it from Github
+    #datacsv = pd.read_csv("C:/Users/Nehal/OneDrive/Documents/Nehal_Personal/Blockchain_Project/Data_Metaverse/DecentralandTheGraphOpenSea.csv")#To load it from local
+    datacsv = pd.read_csv("DecentralandTheGraphOpenSea.csv") #To load it from Github
     df = pd.DataFrame(datacsv)
     return df
 
@@ -134,8 +134,8 @@ st.caption('The white spaces in the above map indicate that land cannot be purch
 
 
 st.subheader("Decentraland Map")
-image = Image.open('C:/Users/Nehal/OneDrive/Documents/Nehal_Personal/Blockchain_Project/ColorSchemesDecentraland/Decentraland_Map.jpg')
-#image = Image.open('Decentraland_Map.jpg')
+#image = Image.open('C:/Users/Nehal/OneDrive/Documents/Nehal_Personal/Blockchain_Project/ColorSchemesDecentraland/Decentraland_Map.jpg')
+image = Image.open('Decentraland_Map.jpg')
 st.image(image, width=620)
 
 #streamlit run C:\Users\Nehal\.spyder-py3\pagesOCT\Decentraland_OCT.py
