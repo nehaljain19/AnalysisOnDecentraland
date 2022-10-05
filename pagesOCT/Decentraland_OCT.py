@@ -111,5 +111,5 @@ def app():
     
     
     st.subheader("Decentraland Map")
-    image = Image.open('Decentraland_Map.jpg')
+    image = Image.open('images/Decentraland_Map.jpg')
     st.image(image, width=620)
