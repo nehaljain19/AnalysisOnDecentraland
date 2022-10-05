@@ -15,8 +15,7 @@ from PIL import Image
 
 def app():
     
-    datacsv = pd.read_csv("C:/Users/Nehal/OneDrive/Documents/Nehal_Personal/Blockchain_Project/Data_Metaverse/OpenSeaMetaversesMERGED.csv", encoding= 'unicode_escape')#To load it from local
-    #datacsv = pd.read_csv("OpenSeaMetaversesMERGED.csv") #To load it from Github
+    datacsv = pd.read_csv("OpenSeaMetaversesMERGED.csv", encoding= 'unicode_escape') #To load it from Github
     df = pd.DataFrame(datacsv)
     
     ## Dashboard formatting in Streamlit ##
@@ -34,24 +33,19 @@ def app():
     
     if MetaverseInput == 'Decentraland':
         metaverse = "Decentraland LAND"
-        image = Image.open('C:/Users/Nehal/OneDrive/Documents/Nehal_Personal/Blockchain_Project/ColorSchemesDecentraland/decentraland.png')
-        #image = Image.open('images/decentraland.png')
+        image = Image.open('images/decentraland.png')
     elif MetaverseInput == 'Cryptovoxels':
         metaverse = "Cryptovoxels Parcel"
-        image = Image.open('C:/Users/Nehal/OneDrive/Documents/Nehal_Personal/Blockchain_Project/ColorSchemesDecentraland/CryptoVoxel1.png')
-        #image = Image.open('images/CryptoVoxel1.png')
+        image = Image.open('images/CryptoVoxel1.png')
     elif MetaverseInput == 'NFT Worlds':
         metaverse = "NFT Worlds"
-        image = Image.open('C:/Users/Nehal/OneDrive/Documents/Nehal_Personal/Blockchain_Project/ColorSchemesDecentraland/NFTWorlds.jpg')
-        #image = Image.open('images/NFTWorlds.jpg')
+        image = Image.open('images/NFTWorlds.jpg')
     elif MetaverseInput == 'Somnium Space':
         metaverse = "Somnium Space Land"
-        image = Image.open('C:/Users/Nehal/OneDrive/Documents/Nehal_Personal/Blockchain_Project/ColorSchemesDecentraland/SomniumSpace2.png')
-        #image = Image.open('images/SomniumSpace2.png')
+        image = Image.open('images/SomniumSpace2.png')
     else:
         metaverse = "Sandbox's LANDs"
-        image = Image.open('C:/Users/Nehal/OneDrive/Documents/Nehal_Personal/Blockchain_Project/ColorSchemesDecentraland/the-sandbox-sand-logo.png')
-        #image = Image.open('images/the-sandbox-sand-logo.png')
+        image = Image.open('images/the-sandbox-sand-logo.png')
         
     #Data filtering based on the input data and storing it into a different Dataframe
     df_dashboard = df.loc[df['collection'] == metaverse]
@@ -70,7 +64,6 @@ def app():
     
     fig.update_xaxes(
         showgrid=False,
-        #dtick="M1",
         tickformat="%b %d\n%Y",
         rangeslider_visible=True,
         rangeselector= dict(
@@ -110,13 +103,12 @@ def app():
     st.subheader("Daily Trade Volume")
     st.caption('Select a Metaverse from the sidebar to view the `Daily Trade Volume` of land parcels in USD.')
     
-    
+    #Chart 2
     fig1 = px.line(df_dashboard, x="transaction_date", y="DailyTradeVolumeUSD", color="collection", line_group="collection",
                   hover_data={"transaction_date": "|%B %d, %Y"})
     
     fig1.update_xaxes(
         showgrid=False,
-        #dtick="M1",
         tickformat="%b %d\n%Y",
         rangeslider_visible=True,
         rangeselector= dict(
@@ -150,6 +142,3 @@ def app():
                  )
     
     st.plotly_chart(fig1, use_container_width=True)
-
-
-#  streamlit run C:\Users\Nehal\.spyder-py3\pagesOCT\MetaverseSummaryGraph_OCT.py
