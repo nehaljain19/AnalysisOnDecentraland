@@ -53,7 +53,7 @@ def app():
     st.header('Decentraland')
     
     st.subheader("Map - Area Average Price")
-    st.caption('This map shows us the area average price of Decentraland LAND parcels based on the paramaters selected from the sidebar.')
+    st.caption('This map shows us the `area average price (USD)` of Decentraland LAND parcels based on the paramaters selected from the sidebar.')
     st.sidebar.subheader("Parameters for the Map")
     
     
