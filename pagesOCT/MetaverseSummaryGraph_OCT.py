@@ -58,8 +58,9 @@ def app():
     st.caption('Select a Metaverse from the sidebar to view the `Floor Sale Prices` of land parcels in USD.')
     
     #Chart 1
-    fig = px.line(df_dashboard, x="transaction_date", y="dailyMinSalePrice_USD", color="collection", line_group="collection",
-                  hover_data={"transaction_date": "|%B %d, %Y"})
+    fig = px.line(df_dashboard, x="transaction_date", y="dailyMinSalePrice_USD", line_group="collection",
+                  hover_data={"transaction_date": "|%B %d, %Y"},
+                  labels={"transaction_date":"Transaction Date", "dailyMinSalePrice_USD": "Daily Minimum Sale Price ($)"})
     
     
     fig.update_xaxes(
@@ -104,8 +105,9 @@ def app():
     st.caption('Select a Metaverse from the sidebar to view the `Daily Trade Volume` of land parcels in USD.')
     
     #Chart 2
-    fig1 = px.line(df_dashboard, x="transaction_date", y="DailyTradeVolumeUSD", color="collection", line_group="collection",
-                  hover_data={"transaction_date": "|%B %d, %Y"})
+    fig1 = px.line(df_dashboard, x="transaction_date", y="DailyTradeVolumeUSD", line_group="collection",
+                  hover_data={"transaction_date": "|%B %d, %Y"},
+                  labels={"transaction_date":"Transaction Date", "DailyTradeVolumeUSD": "Daily Trade Volume ($)"})
     
     fig1.update_xaxes(
         showgrid=False,
