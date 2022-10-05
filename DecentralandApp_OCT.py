@@ -15,13 +15,9 @@ from pagesOCT import Decentraland_OCT,MetaverseSummaryGraph_OCT
 # Create an instance of the app 
 app = MultiPage()
 
-# Title of the main page
-
-#col2.title("Data Storyteller Application")
-
 # Add all your application here
-app.add_page("Map - Area Average Price", Decentraland_OCT.app)
-app.add_page("Summary", MetaverseSummaryGraph_OCT.app)
+app.add_page("Decentraland Map", Decentraland_OCT.app)
+app.add_page("Metaverse Analytics", MetaverseSummaryGraph_OCT.app)
 
 
 # The main app
