@@ -50,11 +50,11 @@ def app():
     
     ## Dashboard formatting in Streamlit ##
     
-    st.sidebar.title('Decentraland')
+    st.header('Decentraland')
     
-    st.header("Map - Area Average Price")
+    st.subheader("Map - Area Average Price")
     st.caption('This map shows us the area average price of Decentraland LAND parcels based on the paramaters selected from the sidebar.')
-    st.sidebar.header("Parameters for the Map")
+    st.sidebar.subheader("Parameters for the Map")
     
     
     #Side slider bar
