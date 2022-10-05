@@ -95,6 +95,7 @@ def app():
                       autorange=True,
                       #range=[0, 11000]
                       ),
+                  yaxis_tickprefix = '$',
                   height=600,
                   width =500
                  )
@@ -139,6 +140,7 @@ def app():
                   yaxis=dict(
                       autorange=True,
                       ),
+                  yaxis_tickprefix = '$',
                   height=600,
                   width =500
                  )
