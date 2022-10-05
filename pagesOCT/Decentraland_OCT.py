@@ -67,13 +67,15 @@ def app():
     
     ## Input fields
     areaInput = st.sidebar.selectbox('Size of area to calculate `Area Average Price` (shown on map)',('20x20','10x10','50x50','100x100'))
-    date_transaction = st.sidebar.date_input('Upto Transaction Date',latest,oldest,latest)
+    date_transaction_max = st.sidebar.date_input('Max Transaction Date',latest,oldest,latest)
+    date_transaction_min = st.sidebar.date_input('Min Transaction Date',oldest,oldest,latest)
     usd_range = st.sidebar.slider('USD price range:', value = [0,30000],step = 10)
     
     #Data filtering based on the input data and storing it into a different Dataframe
     df_dashboard = df.loc[(df['x'] >= x_range[0]) & (df['x'] <= x_range[1]) & 
                 (df['y'] >= y_range[0]) & (df['y'] <= y_range[1]) & 
-                (df['transaction_date'] <= date_transaction)&
+                (df['transaction_date'] <= date_transaction_max)&
+                (df['transaction_date'] >= date_transaction_min)&
                 (df['area_avg_price'] >= usd_range[0])&
                 (df['area_avg_price'] <= usd_range[1])]
     
