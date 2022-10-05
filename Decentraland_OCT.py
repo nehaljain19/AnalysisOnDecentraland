@@ -51,7 +51,7 @@ df['area_avg_price'] = list(map(area_avg_price_fun_eth,df['x_range_min'],df['x_r
 
 st.header('Decentraland')
 st.subheader("Map - Area Average Price")
-st.caption('This map shows us the area average price of Decentraland LAND parcels based on the paramaters selected from the sidebar.')
+st.caption('This map shows us the `area average price (USD)` of Decentraland LAND parcels based on the paramaters selected from the sidebar.')
 st.sidebar.subheader("Parameters for the Map")
 
 
