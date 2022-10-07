@@ -109,7 +109,7 @@ def app():
     ).interactive()
     st.altair_chart(c, use_container_width=True)
     
-    st.caption('The white spaces in the above map indicate that land cannot be purchased on the parcels where `Purple` and `Green` colored properties like Vegas City, Aetherian Project, Genesis Plaza.. are located.')
+    st.caption('The blank spaces in the above map indicate that land cannot be purchased on the parcels where `Purple` and `Green` colored properties like Vegas City, Aetherian Project, Genesis Plaza.. are located.')
     
     
     st.subheader("Decentraland Map")
